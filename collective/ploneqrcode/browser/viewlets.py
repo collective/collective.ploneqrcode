@@ -29,6 +29,5 @@ class PloneQRCodeViewlet(ViewletBase):
     @memoize_contextless
     def get_qrcode(self):
         URI = self.context.absolute_url()
-        img = self.portal.restrictedTraverse('@@ploneqrcode')(data=URI,
-                out="html", scale=self.settings.scale)
+        img = self.portal.restrictedTraverse('@@ploneqrcode')(data=URI, out="html", scale=self.settings.scale)
         return img
