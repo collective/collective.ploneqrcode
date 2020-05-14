@@ -44,6 +44,7 @@ coverage.xml
 # Translations
 *.mo
 *.pot
+collective/ploneqrcode/locales/rebuild_i18n.log
 
 # Django stuff:
 *.log
@@ -56,3 +57,7 @@ target/
 
 bin
 
+# buildout
+.installed.cfg
+.mr.developer.cfg
+.python-version
