@@ -36,14 +36,9 @@ class QrCodeConvert(BrowserView):
 
     def newImg(self, img1, img2):
         n_img = BytesIO()
-
         wBase, hBase = img1.size
-        wpercent = (wBase / float(img2.size[0]))
-        hsize = int((float(img2.size[1]) * float(wpercent)))
-        dim = (int(wBase * wpercent / 100), int(hBase * wpercent / 100))
-
         image_copy = img1.copy()
-        position = ((img1.width - img2.width)/2, (image_copy.height -img2.height)/2)
+        position = ((img1.width - img2.width) / 2, (image_copy.height - img2.height) / 2)
         image_copy.paste(img2, position, img2)
         image_copy.save(n_img, "PNG")
         return n_img
@@ -51,8 +46,8 @@ class QrCodeConvert(BrowserView):
     @memoize_contextless
     def _toPng(self, qrcode, **kwargs):
         qrcode.png(self.oRet, scale=kwargs.get('scale'),
-          module_color=(tuple(map(int, kwargs.get('color').split(', ')))),
-          background=tuple(map(int, kwargs.get('background').split(', '))))
+                   module_color=(tuple(map(int, kwargs.get('color').split(', ')))),
+                   background=tuple(map(int, kwargs.get('background').split(', '))))
 
         if self.settings.use_logo:
             lg = Image.open(BytesIO(base64.b64decode(self.settings.your_logo.split('datab64:')[1]))).convert("RGBA")
@@ -71,7 +66,7 @@ class QrCodeConvert(BrowserView):
         return html_img
 
     def __call__(self, data, scale='5', color='0, 0, 0, 225',
-            background='255, 255, 255, 255', out='png'):
+                 background='255, 255, 255, 255', out='png'):
 
         kwargs = {}
         kwargs['scale'] = scale
@@ -83,4 +78,4 @@ class QrCodeConvert(BrowserView):
             qrcode = pyqrcode.create(data)
 
             if out.lower() in self.supported:
-               return getattr(self, '_to{}'.format(out.title()))(qrcode, **kwargs)
+                return getattr(self, '_to{}'.format(out.title()))(qrcode, **kwargs)

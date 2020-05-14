@@ -34,4 +34,3 @@ class IPloneQRControlPanel(model.Schema):
         default='2',
         vocabulary="collective.ploneqrcode.scale",
     )
-

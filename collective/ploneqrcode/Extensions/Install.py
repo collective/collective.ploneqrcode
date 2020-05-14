@@ -9,4 +9,3 @@ def uninstall(portal, reinstall=False):
         setup_tool = api.portal.get_tool('portal_setup')
         setup_tool.runAllImportStepsFromProfile(profile)
         return 'Ran all uninstall steps.'
-
