@@ -1,0 +1,5 @@
+<div id="viewlet-ploneqrcode">
+    <link rel="stylesheet" type="text/css" media="screen" 
+          tal:attributes="href string:${view/portal_url}/++resource++collective.ploneqrcode/ploneqrcode.css" />
+    <tal:replace tal:replace="structure view/get_qrcode" />
+</div>

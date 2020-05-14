@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.ploneqrcode">
+
+  <i18n:registerTranslations directory="locales" />
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="plone.app.dexterity" />
+
+  <include file="profiles.zcml" />
+  <include package=".browser" />
+  <include package=".upgrades" />
+
+  <utility
+      name="collective.ploneqrcode.scale"
+      component=".utility.get_scale"
+      />
+
+</configure>

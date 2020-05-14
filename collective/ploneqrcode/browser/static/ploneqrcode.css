@@ -1,0 +1,9 @@
+#viewlet-ploneqrcode {
+    display: block;
+    text-align: right;
+}
+
+img.ploneqrcode {
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+}

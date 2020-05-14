@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.ploneqrcode\n"
+"POT-Creation-Date: 2020-05-13 23:15+0000\n"
+"PO-Revision-Date: 2020-05-12 07:10-0300\n"
+"Last-Translator: Cleber J Santos <cleber@cleberjsantos.com.br>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language-Code: pt_br\n"
+"Language-Name: Português brasileiro\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.ploneqrcode\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Language: pt_BR\n"
+
+#: collective.ploneqrcode/collective/ploneqrcode/profiles.zcml:13
+msgid "Create a QR code with text or URI and inject your logo, also provides QR code viewlet for dexterity content."
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/interfaces.py:16
+msgid "Enable Qr Code Viewlets"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/interfaces.py:17
+msgid "Provides QR code viewlet for dexteritycontent and shown below of title."
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/interfaces.py:32
+msgid "Scale"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/controlpanel.py:10
+msgid "Settings for collective.ploneqrcode"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/profiles.zcml:21
+msgid "Uninstalls the collective.ploneqrcode package."
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/interfaces.py:22
+msgid "Use your logo?"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/interfaces.py:27
+msgid "You logo"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/profiles.zcml:13
+msgid "collective.ploneqrcode"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/profiles.zcml:21
+msgid "collective.ploneqrcode (uninstall)"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/profiles/default/controlpanel.xml
+msgid "ploneqrcode Settings"
+msgstr ""
+
+#: collective.ploneqrcode/collective/ploneqrcode/controlpanel.py:9
+msgid "ploneqrcode settings"
+msgstr ""
