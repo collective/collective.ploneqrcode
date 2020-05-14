@@ -8,8 +8,6 @@ cache:
   - eggs
 matrix:
   fast_finish: true
-before_install:
-  - pip install -r buildout_requirements.txt
 install:
   - python bootstrap.py -c buildout.cfg
   - bin/buildout annotate
