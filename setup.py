@@ -25,9 +25,10 @@ setup(
     # Get more strings from
     # https://pypi.python.org/pypi?:action=list_classifiers
     classifiers=[
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.7",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
-        "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords="plone qrcode pil pillow image",
@@ -41,17 +42,14 @@ setup(
     install_requires=[
         "setuptools",
         "pyqrcode",
+        "pypng",
         "plone.api",
         "plone.memoize",
     ],
     extras_require={
         "test": [
             "plone.app.testing",
-            "unittest2",
-            "robotsuite",
-            "robotframework-selenium2library",
-            "plone.app.robotframework",
-            "robotframework-debuglibrary",
+            "plone.app.dexterity",
         ]
     },
     entry_points="""
