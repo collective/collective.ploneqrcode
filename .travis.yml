@@ -1,0 +1,23 @@
+language: python
+python:
+  - 2.7
+sudo: false
+cache:
+  directories:
+  - $HOME/.pylint.d
+  - eggs
+matrix:
+  fast_finish: true
+before_install:
+  - pip install -r buildout_requirements.txt
+install:
+  - python bootstrap.py -c buildout.cfg
+  - bin/buildout annotate
+  - bin/buildout -N -q
+# command to run tests
+script:
+  - bin/code-analysis
+  - bin/test
+  - pylint --py3k --disable=no-absolute-import collective/ploneqrcode
+after_failure:
+  - bin/buildout annotate
