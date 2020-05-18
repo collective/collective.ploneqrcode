@@ -14,11 +14,11 @@ matrix:
 before_install:
   # FIXME: I have no idea how and why six==1.11.0 is being installed
   - pip uninstall -y six
+  - sed -ie "s#test-4.3#test-$PLONE_VERSION#" buildout.cfg
+  - python bootstrap.py --setuptools-version=41.2.0 --buildout-version=2.13.2
+  - bin/buildout -N -t 3 annotate
 install:
-  - python bootstrap.py -c buildout.cfg
-  - bin/buildout annotate
-  - bin/buildout -N -q
-# command to run tests
+  - bin/buildout -N -t 5
 script:
   - bin/code-analysis
   - bin/test
