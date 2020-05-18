@@ -50,6 +50,7 @@ setup(
         "test": [
             "plone.app.testing",
             "plone.app.dexterity",
+            "mock",
         ]
     },
     entry_points="""

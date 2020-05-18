@@ -1,0 +1,65 @@
+Plone QR Code Control Panel
+============================
+
+    >>> from plone.testing.z2 import Browser
+    >>> from plone.app.testing import SITE_OWNER_NAME
+    >>> from plone.app.testing import SITE_OWNER_PASSWORD
+    >>> browser = Browser(layer['app'])
+    >>> browser.handleErrors = False
+    >>> portal = layer['portal']
+    >>> portal_url = portal.absolute_url()
+
+First, login:
+
+    >>> browser.open(portal.absolute_url() + '/login_form')
+    >>> browser.getControl(name='__ac_name').value = SITE_OWNER_NAME
+    >>> browser.getControl(name='__ac_password').value = SITE_OWNER_PASSWORD
+    >>> browser.getControl(name='submit').click()
+    >>> 'You are now logged in' in browser.contents
+    True
+
+Viewing the Plone QR Code control panel
+----------------------------------------
+
+    >>> browser.open(portal_url + '/@@ploneqrcode-settings')
+    >>> browser.url
+    'http://nohost/plone/@@ploneqrcode-settings'
+
+Make some changes
+-----------------
+
+    >>> from os.path import dirname, abspath, join
+
+    >>> browser.open(portal_url + '/@@ploneqrcode-settings')
+
+    >>> browser.getControl('Enable Qr Code Viewlets').selected = True
+    >>> browser.getControl('Scale').value = ['3']
+    >>> browser.getControl('Use your logo?').selected = True
+
+    >>> img_logo = open(join(abspath(dirname(__file__)), 'logo.png'), 'r')
+    >>> browser.getControl(name='form.widgets.your_logo').add_file(img_logo, None, 'lg_plone.png')
+
+Click the save button:
+
+    >>> browser.getControl("Save").click()
+    >>> browser.url.endswith('ploneqrcode-settings')
+    True
+
+We should be informed that something has changed:
+
+    >>> 'Changes saved.' in browser.contents
+    True
+
+Make sure the changes have been applied correctly:
+
+    >>> browser.getControl('Enable Qr Code Viewlets').selected
+    True
+
+    >>> '3' in browser.getControl('Scale').displayValue
+    True
+
+    >>> browser.getControl('Use your logo?').selected
+    True
+
+    >>> 'lg_plone.png' in browser.contents
+    True

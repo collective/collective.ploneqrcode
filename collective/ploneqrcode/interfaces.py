@@ -24,7 +24,7 @@ class IPloneQRControlPanel(model.Schema):
 
     form.widget('your_logo', NamedImageFieldWidget)
     your_logo = schema.ASCII(
-        title=_(u'You logo'),
+        title=_(u'Your logo'),
         required=False,
     )
 
