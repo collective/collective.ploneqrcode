@@ -28,7 +28,7 @@ and then running ``bin/buildout``
 
 
 To install it in Plone, use the Addons control panel, select
-"Plone Quick Upload" Product and install it.
+"Plone QR Code" Product and install it.
 
 To see it in action, just assign the ``collective.ploneqrcode`` somewhere in your
 site and test it.

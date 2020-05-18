@@ -6,7 +6,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.ploneqrcode"
+      title="Plone QR Code"
       directory="profiles/default"
       description="Create a QR code with text or URI and inject your logo, also provides QR code viewlet for dexterity content."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -14,7 +14,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="collective.ploneqrcode (uninstall)"
+      title="Plone QR Code (uninstall)"
       directory="profiles/uninstall"
       description="Uninstalls the collective.ploneqrcode package."
       provides="Products.GenericSetup.interfaces.EXTENSION"
